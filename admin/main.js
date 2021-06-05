@@ -5,7 +5,7 @@ const app = express();
 app.use('/admin',express.static(path.join(__dirname,'../gui/admin')));
 
 
-app.get('/admin/users', (req,res)=>{
+app.get('/api/admin/users', (req,res)=>{
     const file = require('fs')
     file.readFile(`admin/db/users.json`,'utf-8',(err,data)=>{
         
