@@ -1,8 +1,14 @@
 [{
     "name":"admin",
-    "pass":"admin"
+    "pass":"admin",
+    "permission": 1
 },{
-    "name":"Accord", 
-    "pass":"Da2wi5d1"
+    "name":"dawid.zgoda", 
+    "pass":"Da2wi5d1",
+    "permission": 0
+},{
+    "name":"edward.zgoda",
+    "pass":"123456789",
+    "permission": 1
 }
 ]

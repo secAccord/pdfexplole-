@@ -4,7 +4,7 @@ const requestGetOptions = {
     mode:'cors',
   };
   
-const loadUser = () => fetch("http://localhost:3000/api/admin/users", requestGetOptions)
+const loadUser = () => fetch("/api/admin/users", requestGetOptions)
     .then(response => response.json())
     .then(result => {
 

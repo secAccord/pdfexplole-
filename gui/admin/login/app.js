@@ -1,3 +1,4 @@
+let err = ''
 const requestGetOptions = {
     method: 'GET',
     mode:'cors',
@@ -14,25 +15,34 @@ fetch("/api/admin/users", requestGetOptions)
         //console.log(result)
         console.log( `Zarejestrowane konta (${result.length})`);
         result.forEach(e => {
-
-            if(login == e.name){
-                if(pass == e.pass){
-                    console.log('Zalogowano');
-                    //break
-                }else{
+        if(login == e.name){
+            if(e.permission === 1){
+            
+            
+                    if(pass == e.pass){
+                        console.log('Zalogowano');
+                    
+                    }else{
                     
                 }
                 
                // break
-            }else{
-            
+             }else{
+                err += `Użytkownik ${e.name} nie posiada uprawnień administratorskich`
             }
             
             
+        }else{
+           
+        }
         });
 
 
-
+        document.getElementById('error').textContent = err;
+        err ='';
     })
+
     .catch(error => console.log('error', error));
 });
+
+
