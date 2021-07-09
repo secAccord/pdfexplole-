@@ -1,22 +1,18 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const file = require('fs')
 
-app.use('/admin',express.static(path.join(__dirname,'../gui/admin')));
 
-app.use('/admin/login',express.static(path.join(__dirname,'../gui/admin/login')))
+
+//app.use('/admin/login',express.static(path.join(__dirname,'../gui/admin/login')))
 app.get('/api/admin/users', (req,res)=>{
-    const file = require('fs')
-    file.readFile(`admin/db/users.json`,'utf-8',(err,data)=>{
-        
-        if(err){
-            console.log(err)
-        }else{
-            data = JSON.parse(data);
-            res.send(data)
-        }
-    })
+
+    const data = file.readFileSync(`admin/db/users.json`);
+    const db = JSON.parse(data)
+
+    
+    res.json(db)
 
 })
-
 module.exports = app;
