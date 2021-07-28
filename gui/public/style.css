@@ -1,0 +1,77 @@
+
+body{
+    margin:0;
+    padding: 0;
+    background-color: #005F73;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.user{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+     background:  radial-gradient(circle, hsla(19, 97%, 37%, 1) 0%, hsla(358, 64%, 37%, 1) 100%);
+    color:white;
+}.button{
+    display: grid;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 45px;
+    color: black;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+    background-color: white;
+}
+
+.button.add{
+    color:white;
+    background-color: chartreuse;
+    transition: .25s;
+}
+.button.add:hover{
+    
+    background-color: green;
+}
+
+
+.addPanel{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: indianred;
+    width: 50%;
+    height: 75%;
+    text-align: center;
+}
+.title{
+    margin-top: 10px;
+    font-size: 40px;
+}.panelMenu{
+
+}.spanMenu{
+    font-size: 20px;
+    transition: .1s;
+}.spanMenu:hover{
+    color: gold;
+}.panelBG{
+    position:absolute;
+    display: none;
+    width: 100%;
+    height:100%;
+    background-color:hsla(100,97%,0%,0.5);
+    transition: 1s;
+}
+.button.off{
+    margin:10px 10px;

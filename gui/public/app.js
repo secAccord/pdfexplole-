@@ -1,7 +1,8 @@
 if(sessionStorage.getItem('logintoken') == null){
-    document.body.innerHTML ='You have not permission'
+
+    location.href ='/login'
 }
-document.querySelector('user').innerHTML = userName()
+document.querySelector('#user').innerHTML = `Witaj ${userName()}`
 
 
 
@@ -14,3 +15,15 @@ function userName(){
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
     return userInfo.name
 }
+document.querySelector('#add').addEventListener('click',e=>{
+
+    document.querySelector('#addPanel').style.display = 'block';
+
+
+})
+document.querySelector('#Off').addEventListener('click',e=>{
+
+    document.querySelector('#addPanel').style.display = 'none';
+
+
+})

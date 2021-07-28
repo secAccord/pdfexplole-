@@ -5,7 +5,6 @@ const file = require('fs')
 
 
 
-//app.use('/admin/login',express.static(path.join(__dirname,'../gui/admin/login')))
 app.get('/api/admin/users', (req,res)=>{
 
     const data = file.readFileSync(`admin/db/users.json`);
@@ -15,4 +14,6 @@ app.get('/api/admin/users', (req,res)=>{
     res.json(db)
 
 })
+
+app.use('/pdf',express.static(path.join(__dirname,'/pdfData')))
 module.exports = app;
