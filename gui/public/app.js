@@ -1,29 +1,44 @@
-if(sessionStorage.getItem('logintoken') == null){
-
-    location.href ='/login'
+const App = () => {
+const [val,setVal] = React.useState('')
+const [addonMenu,showMenu] = React.useState(false)
+function userInfo(){
+    const user = JSON.parse(sessionStorage.getItem('userInfo'));
+    return user.name
 }
-document.querySelector('#user').innerHTML = `Witaj ${userName()}`
 
-
-
-
-function logout(){
-    sessionStorage.removeItem('logintoken')
-    location.href = '/login'
+const szukaj =()=>{
+    setVal(document.getElementById('input').value)
 }
-function userName(){
-    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-    return userInfo.name
-}
-document.querySelector('#add').addEventListener('click',e=>{
 
-    document.querySelector('#addPanel').style.display = 'block';
+    return (
+    <div>
+    <nav className='menu'>
+    <UserName user={userInfo()} />
+    <InputSearch val={val} click={szukaj}/>
+    </nav>
+    <div>{val}</div>
+
+    
+    </div>
+    )
+    
+  }
+ 
 
 
-})
-document.querySelector('#Off').addEventListener('click',e=>{
+const UserName = ({user}) =>(
 
-    document.querySelector('#addPanel').style.display = 'none';
+    <h1 className="user menuEle"> Witaj {user} </h1>
 
-
-})
+    );
+const InputSearch  = ({click}) => (
+<div className='search menuEle'>
+    <input id='input' className='input' type='text' placeholder='Szukaj po nazwie'></input>
+    <button className='button' onClickCapture={click}>Szukaj</button>
+</div>
+)
+  ReactDOM.render(
+   <App />,
+    document.getElementById('app')
+  );
+  

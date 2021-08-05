@@ -2,76 +2,40 @@
 body{
     margin:0;
     padding: 0;
-    background-color: #005F73;
-}
-.menu{
-    display: flex;
-    align-items: center;
+    background: linear-gradient(180deg, #FC7272 0%, #DF1515 100%);
+    font-family: 'JetBrains Mono', monospace;
+}.menu{
     width: 100%;
     height: 100px;
+    display: block;
 }
 .user{
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    width: 25%;
+    padding-top: 10px;
     text-align: center;
-    width: 200px;
-    height: 100px;
-     background:  radial-gradient(circle, hsla(19, 97%, 37%, 1) 0%, hsla(358, 64%, 37%, 1) 100%);
-    color:white;
-}.button{
     display: grid;
-    text-align:center;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    border-radius: 45px;
-    color: black;
-    height: 50px;
-    width: 50px;
-    margin-left: 30px;
-    background-color: white;
-}
-
-.button.add{
-    color:white;
-    background-color: chartreuse;
-    transition: .25s;
-}
-.button.add:hover{
-    
-    background-color: green;
-}
-
-
-.addPanel{
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: indianred;
+}
+.search{
     width: 50%;
-    height: 75%;
+    padding-top: 10px;
     text-align: center;
+    display: grid;
+    color: white;
+}.menuEle{
+    display: inline-block;
+}.input{
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
 }
-.title{
-    margin-top: 10px;
-    font-size: 40px;
-}.panelMenu{
+.input::placeholder{
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-style: italic;
+}
+.button{
+    height: 50px;
+}
 
-}.spanMenu{
-    font-size: 20px;
-    transition: .1s;
-}.spanMenu:hover{
-    color: gold;
-}.panelBG{
-    position:absolute;
-    display: none;
-    width: 100%;
-    height:100%;
-    background-color:hsla(100,97%,0%,0.5);
-    transition: 1s;
-}
-.button.off{
-    margin:10px 10px;
