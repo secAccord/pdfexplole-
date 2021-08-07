@@ -4,26 +4,32 @@ body{
     padding: 0;
     background: linear-gradient(180deg, #FC7272 0%, #DF1515 100%);
     font-family: 'JetBrains Mono', monospace;
-}.menu{
+}.textCenter{
+    text-align: center;
+}
+.menu{
     width: 100%;
     height: 100px;
     display: block;
+    position: static;
 }
 .user{
     width: 25%;
     padding-top: 10px;
-    text-align: center;
+    
     display: grid;
     color: white;
 }
 .search{
-    width: 50%;
+    width: 40%;
     padding-top: 10px;
-    text-align: center;
+    
     display: grid;
     color: white;
+    
 }.menuEle{
     display: inline-block;
+    color: white;
 }.input{
     width: 300px;
     height: 50px;
@@ -37,5 +43,36 @@ body{
 }
 .button{
     height: 50px;
+}.logout{
+    width: 20%;
+    padding-top: 10px;
+    font-size: 20px;
+}.logoutAnim{
+    transition: .2s ease-out;
 }
+
+
+
+.logoutAnim:hover{
+    margin-left: 10px ;
+}.userAnim{
+    transition: .5s ease-in;
+}
+
+
+
+.userAnim:hover{
+    margin-right: 10px;
+}.bg-menu{
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 100%, 0%, 50%);
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 10;
+}
+
 
