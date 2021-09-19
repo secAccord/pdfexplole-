@@ -1,5 +1,6 @@
 
 body{
+    width: 100%;
     margin:0;
     padding: 0;
     background: linear-gradient(180deg, #FC7272 0%, #DF1515 100%);
@@ -12,9 +13,10 @@ body{
     height: 100px;
     display: block;
     position: static;
+    background-color: hsla(0, 100%, 50%, 20%);
 }
 .user{
-    width: 25%;
+    width: 20%;
     padding-top: 10px;
     
     display: grid;
@@ -57,6 +59,10 @@ body{
     margin-left: 10px ;
 }.userAnim{
     transition: .5s ease-in;
+}.addonButton{
+    width: 10%;
+    color:white;
+    font-size: 30px;
 }
 
 
@@ -73,6 +79,16 @@ body{
     background-color: hsla(0, 100%, 0%, 50%);
     transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 10;
+}.leftMenu{
+    display: inline-block;
+    height: calc(100% - 100px);
+    position: static;
+    background-color: hsla(200, 100%, 70%, 10%);
+
+
+
+}.tabelMenu{
+    display: inline-block;
+
+
 }
-
-

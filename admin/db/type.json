@@ -1,0 +1,12 @@
+[
+    {
+        "name":"ksiazka",
+        "displayName":"Książka"
+    },{
+        "name":"faktura",
+        "displayName":"Faktura"
+    },{
+        "name":"kosztorys",
+        "displayName":"Kosztorys"
+    }
+]

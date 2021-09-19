@@ -23,6 +23,20 @@ app.get('/api/admin/ctg',(req,res)=>{
 
     res.json(db)
 })
+app.get('/api/admin/type',(req,res)=>{
+
+    const data = file.readFileSync('admin/db/type.json')
+    const db = JSON.parse(data)
+
+    res.json(db)
+})
+app.get('/api/admin/pdf',(req,res)=>{
+
+    const data = file.readFileSync('admin/db/pdf.json')
+    const db = JSON.parse(data)
+
+    res.json(db)
+})
 app.use('/pdf',express.static(path.join(__dirname,'/pdfData')))
 app.post('/api/uploadFile',controller.upload)
 module.exports = app;

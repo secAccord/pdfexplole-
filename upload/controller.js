@@ -4,7 +4,7 @@ const fileJSON = require("fs")
 const date = new Date();
 const upload = async (req, res) => {
   try { 
-   
+   let errored = false;
     await uploadFile(req, res);
     
     if(req.file == undefined) {
@@ -13,14 +13,30 @@ const upload = async (req, res) => {
     if(req.body.name == undefined){
       return res.status(400).send({message:"Please give name file "});
     }
+    if(req.body.categ == undefined){
+      return res.status(400).send({message:"Please give category "});
+    }
+    if(req.body.type == undefined){
+      return res.status(400).send({message:"Please give type"});
+    }
+
     
     const data = JSON.parse(fileJSON.readFileSync('admin/db/pdf.json'))
+    data.forEach(e=>{
+      if(e.src == req.file.originalname){
+        errored = !errored
+      }
+
+
+    })
+    if(!errored){
     data.push({
-        name:req.name,
+        name:req.body.name,
         src:`${req.file.originalname}`,
-        addonData:`${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`,
-        categ:"",
-        type:"",
+        addonData:`${date.getDay()+1}.${date.getMonth()+1}.${date.getFullYear()}`,
+        categ:req.body.categ,
+        type:req.body.type,
+        author:req.body.author,
 
     })
     fileJSON.writeFileSync('admin/db/pdf.json',JSON.stringify(data))
@@ -29,7 +45,11 @@ const upload = async (req, res) => {
     res.status(200).send({
       message: "Uploaded the file successfully: " + req.file.originalname,
     });
-   
+  }else{
+    res.status(401).send({
+      message: "File exist " + req.file.originalname,
+    });
+  }
   } catch (err) {
     res.status(500).send({
       message: `Could not upload the file:${err}`,
