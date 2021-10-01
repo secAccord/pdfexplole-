@@ -26,8 +26,7 @@ const upload = async (req, res) => {
       if(e.src == req.file.originalname){
         errored = !errored
       }
-
-
+      
     })
     if(!errored){
     data.push({

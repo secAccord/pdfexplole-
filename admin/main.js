@@ -23,6 +23,14 @@ app.get('/api/admin/ctg',(req,res)=>{
 
     res.json(db)
 })
+app.get('/api/setup'),(req,res)=>{
+
+    const data = file.readFileSync('admin/db/type.json')
+    const db = JSON.parse(data)
+
+
+
+}
 app.get('/api/admin/type',(req,res)=>{
 
     const data = file.readFileSync('admin/db/type.json')
@@ -39,4 +47,5 @@ app.get('/api/admin/pdf',(req,res)=>{
 })
 app.use('/pdf',express.static(path.join(__dirname,'/pdfData')))
 app.post('/api/uploadFile',controller.upload)
+app.get('/api/getFile',controller.download)
 module.exports = app;

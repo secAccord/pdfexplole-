@@ -1,38 +1,35 @@
-
+/*font-family: 'Ephesis', cursive;
+font-family: 'Spartan', sans-serif;
+*/
 body{
     width: 100%;
     margin:0;
     padding: 0;
-    background: linear-gradient(180deg, #FC7272 0%, #DF1515 100%);
-    font-family: 'JetBrains Mono', monospace;
-}.textCenter{
-    text-align: center;
+    background: rgb(6,0,92);
+    background: linear-gradient(120deg, rgba(6,0,92,1) 0%, rgba(9,9,121,1) 50%, rgba(34,0,255,1) 100%);
+    font-family: 'Spartan', sans-serif;
 }
 .menu{
-    width: 100%;
-    height: 100px;
-    display: block;
-    position: static;
-    background-color: hsla(0, 100%, 50%, 20%);
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    position: fixed;
+    background-color: hsla(1, 100%, 0%, 20%);
 }
 .user{
-    width: 20%;
     padding-top: 10px;
-    
-    display: grid;
     color: white;
+}.inline{
+    display: inline-block;
 }
 .search{
-    width: 40%;
+    width: 90%;
+    padding-left: 5%;
     padding-top: 10px;
-    
-    display: grid;
     color: white;
-    
-}.menuEle{
-    display: inline-block;
-    color: white;
-}.input{
+}
+.input{
     width: 300px;
     height: 50px;
     font-size: 15px;
@@ -43,35 +40,52 @@ body{
     font-size: 15px;
     font-style: italic;
 }
+
 .button{
     height: 50px;
 }.logout{
-    width: 20%;
-    padding-top: 10px;
-    font-size: 20px;
-}.logoutAnim{
-    transition: .2s ease-out;
+    position: relative;
+    
+    background:white;
+    color: black;
+    width: 60px;
+    height: 60px;
+    border-radius:50px;
+    margin-left: 5px ;
+    font-size: 40px;
+}
+.footer{
+bottom: 0;
 }
 
 
+.center{
+    position: absolute;               /* 2 */
+    top: 50%;
+    left: 50%;                         /* 3 */
+    transform: translate(-50%, -50%) }   /* 4 */
 
-.logoutAnim:hover{
-    margin-left: 10px ;
-}.userAnim{
-    transition: .5s ease-in;
-}.addonButton{
-    width: 10%;
-    color:white;
+.inline{
+    display: inline-block;
+}
+
+
+.addonButton{
+    position: relative;
+    background-color:white;
+   
+    width: 70%;
+    height: 60px;
+    color:black;
     font-size: 30px;
+    border-radius:50px;
 }
 
 
 
-.userAnim:hover{
-    margin-right: 10px;
-}.bg-menu{
+.bg-menu{
     position: absolute;
-    display: grid;
+ 
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -79,16 +93,17 @@ body{
     background-color: hsla(0, 100%, 0%, 50%);
     transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 10;
-}.leftMenu{
+}.card.folder{
+    width: 23%;
+    margin-top: 10px;
+    margin-left:20px;
+    float: left;
+    max-height: 20%;
+}
+.fileList{
+    
     display: inline-block;
-    height: calc(100% - 100px);
-    position: static;
-    background-color: hsla(200, 100%, 70%, 10%);
-
-
-
-}.tabelMenu{
-    display: inline-block;
-
+    width: 70%;
+    margin-left: 26% ;
 
 }

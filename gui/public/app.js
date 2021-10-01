@@ -29,26 +29,29 @@ const App = () => {
     <div>
       {userMenu && <UserMenu exit={showUM} user={userInfo()}/>}
       {addonMenu && <AddonsMenu exit={showM}/>}
-      <nav className="menu textCenter">
+      <div className="menu textCenter inline">
         <UserName user={userInfo()} show={showUM} />
         <InputSearch val={val} click={szukaj} />
-        <Logout click={logout} />
-        <div  onClick={showM} className='addonButton menuEle'><i className="userAnim bi bi-file-earmark-plus-fill"></i>Dodaj</div>
-      </nav>
-    <div className="row">
-      <div className='leftMenu col-3'>Boczne Menu</div>
-      <div className='tabelMenu col-8'><FileList /></div>
+    
+        <div  onClick={showM} className='addonButton menuEle inline'><span className='center'>Dodaj</span></div>
+        <div className="menuEle logout inline" onClick={logout}><i className="bi bi-box-arrow-in-right center"></i></div>
+      </div>
+      
+      <FileList search={val}/>
+      
+      
+     
     </div>
-    </div>
+    
   );
 };
 
 const UserName = ({ user, show }) => (
+  
   <h1 className="user menuEle" onClick={show}>
-    <span className="userAnim">
-      <i className="bi bi-person-circle"></i>
-    </span>{" "}
-    {user}{" "}
+    
+      <i className="bi bi-person-circle"></i> {user}
+    
   </h1>
 );
 const InputSearch = ({ click }) => (
@@ -59,12 +62,7 @@ const InputSearch = ({ click }) => (
     </div>
   </div>
 );
-const Logout = ({ click }) => (
-  <div className="menuEle logout" onClick={click}>
-    <i className="bi bi-box-arrow-in-right"></i>{" "}
-    <span className="logoutAnim">Wyloguj</span>
-  </div>
-);
+
 
 const UserMenu = ({ exit, user }) => {
   
@@ -79,7 +77,7 @@ return (
           <p className="card-text">
           <div className="input-group mb-3">
   <input type="password" className="form-control" placeholder="Zmiana hasła" aria-label="Zmiana Hasła" aria-describedby="button-addon2" />
-  <button className="btn btn-outline-secondary" type="button" id="button-addon2">Zmień</button>
+  <button className="btn btn-outline-secondary" type="button" id="button-q">Zmień</button>
         </div>
           </p>
         </div>
@@ -88,7 +86,6 @@ return (
   );
 };
 const AddonsMenu = ({ exit }) => {
-  //const kat = ['pdf','cat','type']
   const [tab,selectTab] = React.useState(0)
   
   function changeTab0(){
@@ -154,12 +151,6 @@ const FileAddon =()=>{
         <select name='inputType' class="form-select" aria-label="Default select example" onClick={getType}>
           
         </select>
-      </div><div class="input-group mb-3">
-        <span className="input-group-text" id="basic-addon3">Katalog</span>
-        <select name='inputCate' class="form-select" aria-label="Default select example">
-          <option value="wroclaw-2012">Wrocław 2012</option>
-          <option value="katowice-2019">Katowice 2019</option>
-        </select>
       </div>
        
        
@@ -185,7 +176,18 @@ const CatAddon =()=>{
     </div>
   )
 }
-const FileList = ()=>{
+const UserAddon =()=>{
+  
+  return(
+    <div className="card-body">
+              
+            
+    <h5 className="card-title">Dodaj Kategorie</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a className="btn btn-primary">Go somewhere</a>
+    </div>
+  )
+const FileList = ({search})=>{
  
   
 
@@ -201,20 +203,31 @@ const FileList = ()=>{
     .then(response => response.json())
     .then(result =>{ 
       
-      document.querySelector('tbody').innerHTML = ' '
-      result.forEach((e,i) => {
-        document.querySelector('tbody').innerHTML += 
+      document.querySelector('#tbody').innerHTML = ' '
+      result.forEach((e) => {
+        if(e.name.toLowerCase().includes(search.toLowerCase()) || search == '')
+        document.querySelector('#tbody').innerHTML += 
         `
-        <tr>
-        <th scope="row">${i+1}</th>
-        <td>${e.name}</td>
-        <td>${e.author}</td>
-        <td>${e.type}</td>
-        <td>${e.categ}</td>
-        <td>${e.addonData}</td>
-        <td></td>
-        </tr>
-`
+        <div class='card folder text-center'>
+            <div class='card-header'>${e.name}</div>
+            <div class='card-body'>
+                ${e.type} <br />
+                ${e.categ} <br />
+                ${e.addonData}
+            </div>
+            <div class='card-footer'>
+                Dodane przez <span class='text-muted'>${e.author}</span>
+
+            </div>
+            
+
+        </div>
+        
+       
+       
+       
+        
+        `
         
       });
      
@@ -231,44 +244,11 @@ const FileList = ()=>{
     .catch(error => console.log('error', error));
    
     
-    /*<tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>*/
-
-
-
   return(
     
-    <table  className="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Index</th>
-      <th scope="col">Nazwa</th>
-      <th scope="col">Autor</th>
-      <th scope="col">Typ</th>
-      <th scope="col">Katalog</th>
-      <th scope="col">Data</th>
-      <th scope="col">Akcje</th>
-    </tr>
-  </thead>
-  <tbody >
+<div id='tbody'  className="inline fileList">
   
-  </tbody>
-</table>
+</div>
 
 
 
