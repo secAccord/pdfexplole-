@@ -187,6 +187,7 @@ const UserAddon =()=>{
               <a className="btn btn-primary">Go somewhere</a>
     </div>
   )
+}
 const FileList = ({search})=>{
  
   
@@ -254,6 +255,72 @@ const FileList = ({search})=>{
 
   )
 }
+const CateList = ({search})=>{
+ 
+  
 
+    
+ 
+    
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  fetch("http://localhost:3000/api/admin/ctg", requestOptions)
+    .then(response => response.json())
+    .then(result =>{ 
+      
+      document.querySelector('#tbody').innerHTML = ' '
+      result.forEach((e) => {
+        if(e.name.toLowerCase().includes(search.toLowerCase()) || search == '')
+        document.querySelector('#tbody').innerHTML += 
+        `
+        <div class='card folder text-center'>
+            <div class='card-header'>${e.name}</div>
+            <div class='card-body'>
+                ${e.type} <br />
+                ${e.categ} <br />
+                ${e.addonData}
+            </div>
+            <div class='card-footer'>
+                Dodane przez <span class='text-muted'>${e.author}</span>
+
+            </div>
+            
+
+        </div>
+        
+       
+       
+       
+        
+        `
+        
+      });
+     
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      console.log(result)})
+    .catch(error => console.log('error', error));
+   
+    
+  return(
+    
+<div id='tbody'  className="inline fileList">
+  
+</div>
+
+
+
+  )
+}
 
 ReactDOM.render(<App />, document.getElementById("app"));
