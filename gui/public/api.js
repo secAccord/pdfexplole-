@@ -1,8 +1,6 @@
-let useType = false;
-let useCategory = false;
 
-function getType(e){
-if(!useType){
+function getType(){
+
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -11,20 +9,22 @@ if(!useType){
       fetch("http://localhost:3000/api/admin/type", requestOptions)
         .then(response => response.json())
         .then(result =>{
-          //console.log(e.target)
+            let adw = '' 
+            document.querySelector("#adw").innerHTML = ''
                result.forEach(arr => {
+                   
+                    const a = document.createElement('div')
+                    a.value = arr.name
+                    a.textContent = arr.displayName
+                    document.querySelector("#adw").appendChild(a) 
                     
-                    const option = document.createElement('option')
-                    option.value = arr.name
-                    option.textContent = arr.displayName
-                   e.target.appendChild(option) 
-                
-                
+
+                  
                 
                 });
-                useType = !useType
+                
 
-
+           
 
 
 
@@ -35,7 +35,7 @@ if(!useType){
         })
         .catch(error => console.log('error', error));
     
-    }
+    
 
 
 

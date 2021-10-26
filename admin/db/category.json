@@ -1,14 +1,6 @@
 [
-
 {
-    "name":"Faktury",
-    "raw_name":"faktury"
-},
-{
-
-    "name":"Projekty",
-    "raw_name":"projekty"
-
+    "name":"Akty Prawne",
+    "raw_name":"aktyprawne"
 }
-
 ]

@@ -25,7 +25,7 @@ app.get('/api/admin/ctg',(req,res)=>{
 })
 app.get('/api/setup'),(req,res)=>{
 
-    const data = file.readFileSync('admin/db/type.json')
+    const data = file.readFileSync('admin/db/catalogs.json')
     const db = JSON.parse(data)
 
 
@@ -33,7 +33,7 @@ app.get('/api/setup'),(req,res)=>{
 }
 app.get('/api/admin/type',(req,res)=>{
 
-    const data = file.readFileSync('admin/db/type.json')
+    const data = file.readFileSync('admin/db/catalogs.json')
     const db = JSON.parse(data)
 
     res.json(db)
