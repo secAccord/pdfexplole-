@@ -1,11 +1,21 @@
 /*font-family: 'Ephesis', cursive;
 font-family: 'Spartan', sans-serif;
 */
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     width: 100%;
-    margin:0;
-    padding: 0;
     color:whitesmoke;
-    background: linear-gradient(120deg, rgba(6,0,92,1) 0%, rgba(9,9,121,1) 50%, rgba(34,0,255,1) 100%);
+    background:  rgba(9,9,121,1) 50%;
     font-family: 'Spartan', sans-serif;
+}
+.block{
+    font-family: 'Ephesis', cursive;
+    color: black;
+    background-color: white;
+    margin: 20px;
+    width: 15%;
+    border:2px solid red;
 }

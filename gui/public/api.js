@@ -1,4 +1,3 @@
-
 function getType(){
 
     var requestOptions = {
@@ -9,16 +8,65 @@ function getType(){
       fetch("http://localhost:3000/api/admin/type", requestOptions)
         .then(response => response.json())
         .then(result =>{
-            let adw = '' 
+           //let adw = '' 
             document.querySelector("#adw").innerHTML = ''
                result.forEach(arr => {
                    
-                    const a = document.createElement('div')
-                    a.value = arr.name
+                    const a = document.createElement('div')                    
                     a.textContent = arr.displayName
-                    document.querySelector("#adw").appendChild(a) 
+                    //document.querySelector("#adw").appendChild(a) 
                     
 
+                  
+                
+                });
+                
+
+           
+
+
+
+
+
+
+
+        })
+        .catch(error => console.log('error', error));
+    
+    
+
+
+
+}
+function getPdf(){
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch("http://localhost:3000/api/admin/pdf", requestOptions)
+        .then(response => response.json())
+        .then(result =>{
+           //let adw = '' 
+            //document.querySelector("#adw").innerHTML = ''
+               result.forEach(arr => {
+                   
+                    const div = document.createElement('div')
+                    div.className = 'block'
+                    const name = document.createElement('p') 
+                    const data = document.createElement('p') 
+                    const category = document.createElement('p')
+                    const catalog = document.createElement('p')                        
+                    name.textContent = `${arr.name} [${arr.author}] `;
+                    data.textContent = `(${arr.data})`;
+                    category.textContent = `Kategoria: ${arr.category.name}`;
+                    catalog.textContent = `Katalog: ${arr.catalog.displayName}`;
+                    div.appendChild(name) 
+                    div.appendChild(data) 
+                    div.appendChild(category) 
+                    div.appendChild(catalog) 
+                    document.querySelector('#adw').appendChild(div)
                   
                 
                 });

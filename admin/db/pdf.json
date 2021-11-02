@@ -2,47 +2,47 @@
         "name": "Jak zostać programistą",
         "src": "jak_zostac_programista.pdf",
         "addonData": "7.8.2021",
-        "categ": "wroclaw-2012",
-        "type": "ksiazka",
+        "categ": "0000",
+       
         "author": "admin"
     },
     {
         "name": "Logotypy",
         "src": "secLogoDev.pdf",
         "addonData": "1.9.2021",
-        "categ": "katowice-2019",
-        "type": "ksiazka",
+        "categ": "0001",
+        
         "author": "edward.zgoda"
     },
     {
         "name": "Rodo",
         "src": "Domeny-Poradnik-Rodo.pdf",
         "addonData": "1.9.2021",
-        "categ": "wroclaw-2012",
-        "type": "ksiazka",
+        "categ": "0001",
+        
         "author": "admin"
     },
     {
         "name": "Kodeks Karny Ziobry",
         "src": "D19970553Lj.pdf",
         "addonData": "27.9.2021",
-        "categ": "wroclaw-2012",
-        "type": "ksiazka",
+        "categ": "0001",
+      
         "author": "edward.zgoda"
     },
     {
         "name": "Deklaracja",
         "src": "EM 2022 Zalacznik 1a Deklaracja A.pdf",
         "addonData": "3.9.2021",
-        "categ": "katowice-2019",
-        "type": "ksiazka",
+        "categ": "0001",
+    
         "author": "admin"
     },
     {
         "name": "Jak zostać debilem",
         "src": "egzamin-zawodowy-praktyczny.pdf",
         "addonData": "1.10.2021",
-        "type": "ksiazka",
+        "categ": "0001",
         "author": "admin"
     }
 ]

@@ -81,7 +81,7 @@ const getListFiles = (req, res) => {
 
 const download = (req, res) => {
   const fileName = req.params.name;
-  const directoryPath = "admin/pdfData";
+  const directoryPath = "admin/pdfData/";
 
   res.download(directoryPath + fileName, fileName, (err) => {
     if (err) {
