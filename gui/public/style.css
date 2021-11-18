@@ -1,14 +1,9 @@
 /*font-family: 'Ephesis', cursive;
 font-family: 'Spartan', sans-serif;
 */
-*{
-    margin: 0;
-    padding: 0;
-}
 body{
-    width: 100%;
-    color:whitesmoke;
-    background:  rgba(9,9,121,1) 50%;
+    /*color:whitesmoke;
+    background-color: #212529;*/
     font-family: 'Spartan', sans-serif;
 }
 .block{
@@ -18,4 +13,21 @@ body{
     margin: 20px;
     width: 15%;
     border:2px solid red;
+}ol,ul,.list-group{
+    margin: 5px;
 }
+ol{
+    padding-left: 12px;
+
+
+}
+nav{
+    padding: 0;
+}img{
+width: 25%;
+
+
+}name{
+    display: block;
+}
+

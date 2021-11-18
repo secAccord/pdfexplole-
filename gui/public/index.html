@@ -2,27 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
     <title>Lista PDF</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="login/imgPack/geokonstruct_logo_white.png" alt=""/>
+            </a>
+            <a class="navbar-brand">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </a>
+           
+             
+            </div>
+     
+      </nav>
+     
+      <div class="row">
+          
+        <div class="con col-2 bg-dark text-white text-center" >
+              <h4> <i class="bi bi-person-circle"></i> <user></user></h4>
+            <div class="list-group" id='categoryList'>
 
-<button onclick="getPdf()">Pobierz Katalogi</button>
-<ul id='adw'>
+                
+            </div>
+        
+        </div>
+        <div class="col-10">
+            <ol id='fileList'>
+
+        </ol></div>
 
 
-    
-</ul>
-<ul id='pliki'>
 
 
-    
-</ul>
 
 
-    <script src="api.js"></script>
+          </ol></div>
+      </div>
+
+<!--END SITE-->
+<!--JS CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="display.js"></script>
+    <script src="addons.js"></script>
 </body>
 </html>
