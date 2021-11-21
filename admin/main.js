@@ -23,8 +23,8 @@ app.get('/api/admin/pdf',(req,res)=>{
     const pdfDB = JSON.parse(file.readFileSync('admin/db/pdf.json'))
 
     pdfDB.forEach(e => {
-        const catalogs = catalogsDB[parseInt(e.categ[2] + e.categ[3])]
-        const category = categoryDB[parseInt(e.categ[0] + e.categ[1])]
+        const catalogs = catalogsDB[parseInt(e.categ)]
+        const category = categoryDB[parseInt(catalogs.category)]
         db.push({
                 name:e.name,
                 src:e.src,
@@ -47,9 +47,34 @@ app.get('/api/admin/pdf',(req,res)=>{
 
 }*/
 app.get('/api/admin/type',(req,res)=>{
+    const db = []
+    const catalogsDB = JSON.parse(file.readFileSync('admin/db/catalogs.json'))
+    const categoryDB = JSON.parse(file.readFileSync('admin/db/category.json'))
+    categoryDB.forEach((e,i) => {
+        const list = []
+        catalogsDB.forEach((catalogs,catalogsID)=>{
+                if(parseInt(catalogs.category) == i){
+                    list.push({
+                        id:catalogsID,
+                        raw_name:catalogs.name,
+                        name:catalogs.displayName,
+                        
 
-    const data = file.readFileSync('admin/db/catalogs.json')
-    const db = JSON.parse(data)
+
+                    })
+
+                }
+
+        
+        })
+
+    db.push({
+            name:e.name,
+            raw_name:e.raw_name,
+            catalogs:list,
+        });
+    });
+    //const db = data)
 
     res.json(db)
 })

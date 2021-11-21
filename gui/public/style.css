@@ -29,5 +29,16 @@ width: 25%;
 
 }name{
     display: block;
+}.d-none{
+    transition: .3s cubic-bezier(0.19, 1, 0.22, 1);
+}ul>li{
+    list-style: none;
+    text-align: left;
+    
+}.catName{
+    text-align: left;
+    margin-left: 5px;
+}.clicked{
+   color: yellow;
 }
 
