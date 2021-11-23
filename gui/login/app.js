@@ -2,6 +2,7 @@ const requestGetOptions = {
     method: 'GET',
     mode:'cors',
   };
+
 function tokenGenerator(perm){
     let permisson = ''
     if(perm == 1){
@@ -35,7 +36,7 @@ fetch("/api/admin/users", requestGetOptions)
                     tokenGenerator(e.permission)
                     sessionStorage.setItem('logintoken',tokenGenerator(e.permission))
                     sessionStorage.setItem('userInfo',JSON.stringify(e))
-                    location.href ='/'
+                    location.href ='/menu'
                     //break
                 }else{
                     

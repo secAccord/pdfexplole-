@@ -8,15 +8,19 @@ const upload = async (req, res) => {
     await uploadFile(req, res);
     
     if(req.file == undefined) {
+    
       return res.status(400).send({ message: "Please upload a file!" });
     }
     if(req.body.name == undefined){
+     
       return res.status(400).send({message:"Please give name file "});
+      
     }
     if(req.body.categ == undefined){
+  
       return res.status(400).send({message:"Please give category "});
     }
-    if(req.body.type == undefined){
+    if(req.body.info == undefined){
       return res.status(400).send({message:"Please give type"});
     }
 
@@ -34,7 +38,7 @@ const upload = async (req, res) => {
         src:`${req.file.originalname}`,
         addonData:`${date.getDay()+1}.${date.getMonth()+1}.${date.getFullYear()}`,
         categ:req.body.categ,
-        type:req.body.type,
+        info:req.body.info,
         author:req.body.author,
 
     })

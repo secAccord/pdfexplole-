@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href='/menu'><i class="bi bi-house"></i>Wróć</a><header>Edytujesz jako</header>
+    <form>
+    <div class='row'>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Kategoria</span>
+        <select class="form-control" onchange="generateCatalog()"></select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Katalog</span>
+        <select name='catalog' class="form-control"></select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nazwa Pliku</span>
+        <input type="text"  name='name' class="form-control" placeholder="Nazwa pliku.." aria-label="Nazwa pliku.." aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-2">
+        <span class="input-group-text" id="basic-addon1">Plik</span>
+        <input type="file" class="form-control" name="file">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Krótki opis</span>
+        <textarea name='info' class="form-control" aria-label="Krótki opis"></textarea>
+      </div>
+    </div>
+      <button type="submit" class="btn btn-primary">Wyślij</button>
+    </form>
+    <p class="footer">&copy; SEC 2022</p>
+    <script src="main.js"></script>
+    <script src="addons.js"></script>
+</body>
+</html>

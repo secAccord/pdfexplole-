@@ -1,3 +1,6 @@
+if (sessionStorage.getItem("userInfo") == null) {
+  location.href = "/";
+}
 function getType(){
 
     var requestOptions = {

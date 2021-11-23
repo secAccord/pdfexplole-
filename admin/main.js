@@ -78,13 +78,22 @@ app.get('/api/admin/type',(req,res)=>{
 
     res.json(db)
 })
-app.get('/api/admin/ctg',(req,res)=>{
+app.get('/api/admin/category',(req,res)=>{
 
-    const data = file.readFileSync('admin/db/pdf.json')
+    const data = file.readFileSync('admin/db/category.json')
     const db = JSON.parse(data)
 
     res.json(db)
 })
+
+app.get('/api/admin/catalog',(req,res)=>{
+
+    const data = file.readFileSync('admin/db/catalogs.json')
+    const db = JSON.parse(data)
+
+    res.json(db)
+})
+
 app.use('/pdf',express.static(path.join(__dirname,'/pdfData')))
 app.post('/api/uploadFile',controller.upload)
 app.get('/api/getFile',controller.download)

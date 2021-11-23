@@ -1,29 +1,29 @@
-function sendFile(e){
+document.querySelector('form').addEventListener('submit',(e)=>{
     let err = false;
     const errData = []
     e.preventDefault()
  
-    const name = e.target.inputName.value
-    const file = e.target.inputFile.value
-    const type = e.target.inputType.value
-    const cate = e.target.inputCate.value
+    const name = e.target.name.value
+    const file = e.target.file.value
+    const info = e.target.info.value
+    const cate = e.target.catalog.value
     if(name == ''){
-        e.target.inputName.focus()
+        e.target.name.focus()
         errData.push('nazwy')
         err = true
     } 
     if(file == ''){
-        e.target.inputFile.focus()
+        e.target.file.focus()
         errData.push('pliku')
         err = true
     } 
-    if(type == ''){
-        e.target.inputType.focus()
-        errData.push('typu')
+    if(info == ''){
+        e.target.info.focus()
+        errData.push('opisu')
         err = true
     } 
     if(cate == ''){
-        e.target.inputCate.focus()
+        e.target.catalog.focus()
         errData.push('katalogu')
         err = true
     }
@@ -33,10 +33,10 @@ if(!err){
 myHeaders.append("Authorization", "xWjC3zdynbIAAAAAAAAAAbxi5rtJ17xXIOi-pk4x8d9Du_WoD5282ecg30OeKsE6");
 
 const formdata = new FormData();
-    formdata.append("file", e.target.inputFile.files[0], file);
+    formdata.append("file", e.target.file.files[0], file);
     formdata.append("name", name);
     formdata.append("categ", cate);
-    formdata.append("type", type);
+    formdata.append("info", info);
     formdata.append("author", author)
 
 const requestOptions = {
@@ -74,4 +74,4 @@ errData.forEach(e=>alert( `Brak ${e}`))
 
 
 
-}
+});
