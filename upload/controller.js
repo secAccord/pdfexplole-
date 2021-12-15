@@ -16,9 +16,14 @@ const upload = async (req, res) => {
       return res.status(400).send({message:"Please give name file "});
       
     }
-    if(req.body.categ == undefined){
+    if(req.body.ctg == undefined){
+     
+      return res.status(400).send({message:"Please give category file "});
+      
+    }
+    if(req.body.cata == undefined){
   
-      return res.status(400).send({message:"Please give category "});
+      return res.status(400).send({message:"Please give catalog "});
     }
     if(req.body.info == undefined){
       return res.status(400).send({message:"Please give type"});
@@ -37,7 +42,8 @@ const upload = async (req, res) => {
         name:req.body.name,
         src:`${req.file.originalname}`,
         addonData:`${date.getDay()+1}.${date.getMonth()+1}.${date.getFullYear()}`,
-        categ:req.body.categ,
+        ctg:req.body.ctg,
+        cata:req.body.cata,
         info:req.body.info,
         author:req.body.author,
 
@@ -54,6 +60,7 @@ const upload = async (req, res) => {
     });
   }
   } catch (err) {
+    console.log(err)
     res.status(500).send({
       message: `Could not upload the file:${err}`,
     });

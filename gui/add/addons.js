@@ -6,7 +6,8 @@ document.querySelector('form').addEventListener('submit',(e)=>{
     const name = e.target.name.value
     const file = e.target.file.value
     const info = e.target.info.value
-    const cate = e.target.catalog.value
+    const ctg = e.target.category.value
+    const cata = e.target.catalog.value
     if(name == ''){
         e.target.name.focus()
         errData.push('nazwy')
@@ -22,7 +23,12 @@ document.querySelector('form').addEventListener('submit',(e)=>{
         errData.push('opisu')
         err = true
     } 
-    if(cate == ''){
+    if(ctg == ''){
+        e.target.info.focus()
+        errData.push('opisu')
+        err = true
+    } 
+    if(cata == ''){
         e.target.catalog.focus()
         errData.push('katalogu')
         err = true
@@ -35,7 +41,8 @@ myHeaders.append("Authorization", "xWjC3zdynbIAAAAAAAAAAbxi5rtJ17xXIOi-pk4x8d9Du
 const formdata = new FormData();
     formdata.append("file", e.target.file.files[0], file);
     formdata.append("name", name);
-    formdata.append("categ", cate);
+    formdata.append("cata", cata);
+    formdata.append("ctg", ctg);
     formdata.append("info", info);
     formdata.append("author", author)
 
@@ -54,10 +61,11 @@ fetch("/api/uploadFile", requestOptions)
     if(result == 401) alert('Ten plik już jest na serwerze')
     if(result == 200) alert('Dodano plik')
     if(result == 500) alert('Problem z dodaniem pliku')
-    e.target.inputName.value = ''
-    e.target.inputFile.value = ''
-    e.target.inputType.value = ''
-    e.target.inputCate.value = ''
+    e.target.name.value = ''
+    e.target.file.value = ''
+    e.target.info.value = ''
+    e.target.catalog.value = ''
+    e.target.category.value = ''
 
 
 

@@ -16,7 +16,7 @@ var requestOptions = {
     .then(result => {
         let v = ''
             result.forEach((e,i) => {
-                v += `<option value=${i}>${e.name}</option>`;
+                v += `<option value=${e.id}>${e.name}</option>`;
             });
             
             section[0].innerHTML = v;
@@ -31,14 +31,14 @@ const generateCatalog = () =>{
         redirect: 'follow'
       };
       
-      fetch("/api/admin/catalog", requestOptions)
+      fetch("/api/admin/category", requestOptions)
         .then(response => response.json())
         .then(result => {
             let v = ''
-                result.forEach((e,i) => {
-                    if(parseInt(e.category) == section[0].value){
-                        v += `<option value=${i}>${e.displayName}</option>`;
-                    }
+                result[section[0].value].catalogs.forEach((e,i) => {
+                    
+                        v += `<option value=${e.id}>${e.name}</option>`;
+               
                 });
             
                 section[1].innerHTML = v;

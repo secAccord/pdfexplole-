@@ -8,17 +8,17 @@ function getType(){
         redirect: 'follow'
       };
       
-      fetch("/api/admin/type", requestOptions)
+      fetch("/api/admin/category", requestOptions)
         .then(response => response.json())
         .then(result =>{
             
-               result.forEach(x => {
-                let adw = `<div class='catName' id='${x.raw_name}'><span onClick="vList('#${x.raw_name}')"><i class="bi bi-archive"></i> ${x.name}</span><ul class='d-none'>`
-                  
+               result.forEach(e => {
+                let adw = `<div class='catName' id='${e.raw_name}'><span onClick="vList('#${e.raw_name}')"><i class="bi bi-archive"></i> ${e.name}</span><ul class='d-none'>`
+                 
 
-                    x.catalogs.forEach(y=>{
+                    e.catalogs.forEach(y=>{
 
-                      adw += `<li onClick="sortLi('${y.name.toUpperCase()}')"><i class="bi bi-folder2"></i>  ${y.name}</li>`
+                      adw += `<li onClick="sortLi('${y.raw_name.toUpperCase()}')"><i class="bi bi-folder2"></i>  ${y.name}</li>`
 
 
                     })
@@ -65,10 +65,10 @@ function getPdf(){
                   <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
                         <div class="fw-bold">${arr.name}</div>
-                        <data>(${arr.data})</data> Loremdsaidhadfkahbfjaifokjiabn
+                        <data>(${arr.data})</data> ${arr.info}
                       </div>
-                      <catalog class="badge bg-primary rounded-pill">${arr.catalog.displayName.toUpperCase()}</catalog>
-                      <category class="badge bg-danger rounded-pill">${arr.category.name.toUpperCase()}</category>
+                      <catalog class="badge bg-primary rounded-pill">${arr.catalog.toUpperCase()}</catalog>
+                      <category class="badge bg-danger rounded-pill">${arr.category.toUpperCase()}</category>
                     </li>
                 `
                
@@ -123,6 +123,8 @@ function search(e){
   const x = document.querySelector('ol').querySelectorAll('li')
   x.forEach(li =>{
   
+    li.classList.remove('d-none')
+
     if(!li.querySelector('div').querySelector('div').textContent.toLowerCase().includes(e.value.toLowerCase())){
       li.classList.toggle('d-none')
 

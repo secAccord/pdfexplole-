@@ -1,9 +1,122 @@
 [
 {
+    "id": 0,
     "name":"Akty Prawne",
-    "raw_name":"aktyprawne"
+    "raw_name":"aktyprawne",
+    "catalogs":[{
+        "id": 0,
+        "name": "Eurocod",
+        "raw_name": "eurocod"
+    },
+    {
+        "id": 1,
+        "name": "PN-EN",
+        "raw_name": "pn_en"
+    },
+    {
+        "id": 2,
+        "name": "PN",
+        "raw_name": "pn"
+    },
+    {
+        "id": 3,
+        "name": "PN-EN (francuskie)",
+        "raw_name": "pn_en_francuskie"
+    },
+    {
+        "id": 4,
+        "name": "DIN (niemieckie)",
+        "raw_name": "din_niemieckie"
+    },
+    {
+        "id": 5,
+        "name": "British Standard",
+        "raw_name": "britishstandard"
+    },
+    {
+        "id": 6,
+        "name": "Warunki Techniczne",
+        "raw_name": "warunkitechnicznie"
+    },{
+        "id": 7,
+        "name": "Ustawy i Rozporządzenia",
+        "raw_name": "ustawy&rozporzadzenia"
+    }, 
+    {
+        "id": 8,
+        "name": "Wytyczne OBV (Austriackie)",
+        "raw_name": "wytyczneobv_austriackie"
+    }
+    ]
 },{
-    "name":"Projekty",
-    "raw_name":"projekty"
+    "id": 1,
+    "name":"Literatura",
+    "raw_name":"literatura",
+    "catalogs":[
+    {
+        "id": 1,
+        "name": "Beton",
+        "raw_name": "beton"
+    }, 
+    {
+        "id": 2,
+        "name": "Geotechnika",
+        "raw_name": "geotechnika"
+    }, 
+    {
+        "id": 2,
+        "name": "Geotechnika",
+        "raw_name": "geotechnika"
+    }, 
+    {
+        "id": 3,
+        "name": "Prawo i Finanse",
+        "raw_name": "prawo&finanse"
+    }, 
+    {
+        "id": 4,
+        "name": "Słowniki",
+        "raw_name": "slowniki"
+    }, 
+    {
+        "id": 5,
+        "name": "Szkody Górnicze",
+        "raw_name": "szkodygornicze"
+    }, {
+        "id": 6,
+        "name": "Technologie Bezwykopowe",
+        "raw_name": "technologiebezwykopowe"
+    }, 
+    {
+        "id": 7,
+        "name": "Tunelowanie",
+        "raw_name": "tunelowanie"
+    }
+    ]
+},{
+    "id": 2,
+    "name":"Katalogi",
+    "raw_name":"katalogi",
+    "catalogs":[]
+},{
+    "id": 3,
+    "name":"Prezentacje",
+    "raw_name":"prezentacje",
+    "catalogs":[]
+},{
+    "id": 4,
+    "name":"Hipotezy",
+    "raw_name":"hipotezy",
+    "catalogs":[]
+},{
+    "id": 5,
+    "name":"Inne",
+    "raw_name":"inne",
+    "catalogs":[]
+},{
+    "id": 6,
+    "name":"IT",
+    "raw_name":"it",
+    "catalogs":[]
 }
 ]
