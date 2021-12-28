@@ -13,7 +13,7 @@
   "devDependencies": {
     "nodemon": "^2.0.8"
   },
-  "name": "PDF Server",
+  "name": "pdfServer",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
