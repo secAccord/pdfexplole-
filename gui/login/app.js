@@ -4,16 +4,16 @@ const requestGetOptions = {
   };
 
 function tokenGenerator(perm){
-    let permisson = ''
-    if(perm == 1){
-        permisson = 'A' 
+    let permission = ''
+    if(perm === 1){
+        permission = 'A'
     }else{
-        permisson = 'U' 
+        permission = 'U'
     }
     const data = new Date();
     const dataDay = data.getDay()
     const random = Math.floor(Math.random()*100+1)
-    return `${permisson}${random**dataDay}`
+    return `${permission}${random**dataDay}`
 }
 
 

@@ -38,18 +38,18 @@ if(!err){
     const myHeaders = new Headers();
 myHeaders.append("Authorization", "xWjC3zdynbIAAAAAAAAAAbxi5rtJ17xXIOi-pk4x8d9Du_WoD5282ecg30OeKsE6");
 
-const formdata = new FormData();
-    formdata.append("file", e.target.file.files[0], file);
-    formdata.append("name", name);
-    formdata.append("cata", cata);
-    formdata.append("ctg", ctg);
-    formdata.append("info", info);
-    formdata.append("author", author)
+const formData = new FormData();
+    formData.append("file", e.target.file.files[0], file);
+    formData.append("name", name);
+    formData.append("cata", cata);
+    formData.append("ctg", ctg);
+    formData.append("info", info);
+    formData.append("author", author)
 
 const requestOptions = {
   method: 'POST',
   headers: myHeaders,
-  body: formdata,
+  body: formData,
   redirect: 'follow'
 };
 
